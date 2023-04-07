@@ -2,8 +2,8 @@
 
 The small module `SimplePolyIntersect.jl` provides two methods, 
 
--`polyintersection(poly1, poly2; open_out)`
--`polyintersects(poly1, poly2)` 
+- `polyintersection(poly1, poly2; open_out)`
+- `polyintersects(poly1, poly2)` 
 
 This amounts to an interface to the `intersection` function of [LibGEOS.jl](https://github.com/JuliaGeo/LibGEOS.jl).
 
