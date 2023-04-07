@@ -5,7 +5,8 @@ import GeoInterface
 
 export polyintersect
 
-function polyintersect(verts1::Matrix{<:Real}, verts2::Matrix{<:Real})
+function polyintersect(verts1::Matrix{<:Real}, verts2::Matrix{<:Real}; open_out::Bool = false)
+
     if typeof(verts1) != Matrix{Float64}
         verts1 = convert(Matrix{Float64}, verts1)
     end
@@ -32,16 +33,35 @@ function polyintersect(verts1::Matrix{<:Real}, verts2::Matrix{<:Real})
     end
 
     res = Vector{Matrix{Float64}}()
-    
-    for p in pint
-        push!(res, reduce(hcat, p[1])')
+
+    if length(pint[1]) > 1
+        pmat = reduce(hcat, pint[1])'
+
+        if open_out
+            pmat = pmat[1:end-1,:]
+        end
+
+        push!(res, pmat) 
+    else
+        for p in pint
+            pmat = reduce(hcat, p[1])'
+
+            if open_out
+                pmat = pmat[1:end-1,:]
+            end
+
+            push!(res, pmat)
+        end
     end
 
     return res    
 end
 
-function polyintersect(verts1::Vector{<:Vector{<:Real}}, verts2::Vector{<:Vector{<:Real}})
-    return polyintersect(Matrix{Float64}(reduce(hcat, verts1)'), Matrix{Float64}(reduce(hcat, verts2)'))
+function polyintersect(verts1::Vector{<:Vector{<:Real}}, verts2::Vector{<:Vector{<:Real}}; open_out::Bool = false)
+    return polyintersect(
+        Matrix{Float64}(reduce(hcat, verts1)'), 
+        Matrix{Float64}(reduce(hcat, verts2)'), 
+        open_out = open_out)
 end
 
 end # module
