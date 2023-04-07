@@ -43,33 +43,3 @@ for p in pint
 end
 
 resplot
-
-######
-# using LibGEOS
-# using GeoInterface
-
-# verts1 = [0 0 ; 0 1 ; 1 1 ; 1 0 ]
-# verts2 = verts1 .+ 0.5
-# # verts1 = p1
-# # verts2 = p2
-
-# if typeof(verts1) != Matrix{Float64}
-#     verts1 = convert(Matrix{Float64}, verts1)
-# end
-
-# if typeof(verts2) != Matrix{Float64}
-#     verts2 = convert(Matrix{Float64}, verts2)
-# end
-
-# if verts1[end, :] != verts1[1, :]
-#     verts1 = vcat(verts1, verts1[1,:]')
-# end
-
-# if verts2[end, :] != verts2[1, :]
-#     verts2 = vcat(verts2, verts2[1,:]')
-# end    
-
-# verts2 = convert(Matrix{Float64}, verts2)
-# p1 = LibGEOS.Polygon([[verts1[i,:] for i = 1:size(verts1, 1)]])
-# p2 = LibGEOS.Polygon([[verts2[i,:] for i = 1:size(verts2, 1)]])
-# pint = GeoInterface.coordinates(LibGEOS.intersection(p1, p2))
