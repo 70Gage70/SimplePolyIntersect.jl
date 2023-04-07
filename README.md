@@ -18,6 +18,11 @@ julia> polyintersect(p1, p2)[1] # the intersection
  0.5  0.5
  0.5  1.0
  1.0  1.0
+ 
+julia> p3 = p1 .+ 10; # a very distant square
+
+julia> polyintersect(p1, p3)
+false
 ```
 
 Note that the default is to return vertices of the intersection "closed;" repeating the first vertex at the end. This can be toggled with the kwarg `open_out = true`.
