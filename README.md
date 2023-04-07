@@ -32,8 +32,8 @@ include("demo/demo.jl")
 
 The red and blue polygons are the ones we wish to intersect.
 
-![A picture of a red and blue polygon.](p1p2.png)
+![A picture of a red and blue polygon.](demo/p1p2.png)
 
 We can then see that there are three polygons disconnected from each other that make up the intersection.
 
-![A picture of three separate polygons which are located where the previous red and blue polygons intersected.](intersections.png)
+![A picture of three separate polygons which are located where the previous red and blue polygons intersected.](demo/intersections.png)
