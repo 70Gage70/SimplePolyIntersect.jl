@@ -33,8 +33,6 @@ p2 =
 using .SimplePolyIntersect
 using PlotlyJS
 
-p2 = p2 .+ 10
-
 pint = polyintersect(p1, p2)
 
 resplot = plot(scatter(x=p1[:,1], y=p1[:,2], fill="toself"))
@@ -43,3 +41,5 @@ add_trace!(resplot, scatter(x=p2[:,1], y=p2[:,2], fill="toself"))
 for p in pint
     add_trace!(resplot, scatter(x=p[:,1], y=p[:,2], fill="toself"))
 end
+
+resplot
