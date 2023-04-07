@@ -13,11 +13,11 @@ julia> p2 = p1 .+ 0.5; # the same square shifted up and right by 0.5
 
 julia> polyintersect(p1, p2)[1] # the intersection
 5×2 Matrix{Float64}:
-1.0  1.0
-1.0  0.5
-0.5  0.5
-0.5  1.0
-1.0  1.0
+ 1.0  1.0
+ 1.0  0.5
+ 0.5  0.5
+ 0.5  1.0
+ 1.0  1.0
 ```
 
 Note that the default is to return vertices of the intersection "closed;" repeating the first vertex at the end. This can be toggled with the kwarg `open_out = true`.
