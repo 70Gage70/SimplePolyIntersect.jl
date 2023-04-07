@@ -1,6 +1,6 @@
 # SimplePolyIntersect.jl
 
-This is an very small module which provides one function `polyintersect(poly1, poly2; open_out)`. This amounts to a simple interface to the `intersection` function of [LibGEOS.jl](https://github.com/JuliaGeo/LibGEOS.jl).
+This is an very small module which provides one function `polyintersect(poly1, poly2; open_out)`. This amounts to an  interface to the `intersection` function of [LibGEOS.jl](https://github.com/JuliaGeo/LibGEOS.jl).
 
 ## Usage
 
